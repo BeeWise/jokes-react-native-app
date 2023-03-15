@@ -163,7 +163,7 @@ export class JokesPresenter implements JokesPresentationLogic {
     loadingImage.borderBottomRightRadius = JokesStyle.instance.jokeCellModel().avatarBorderRadius;
 
     let avatar = new UserAvatarView.Model(loadingImage);
-    avatar.isDisabled = false;
+    avatar.isDisabled = true;
     avatar.backgroundColor = JokesStyle.instance.jokeCellModel().avatarBackgroundColor;
     avatar.borderWidth = JokesStyle.instance.jokeCellModel().avatarBorderWidth;
     avatar.borderColor = JokesStyle.instance.jokeCellModel().avatarBorderColor;
@@ -179,7 +179,7 @@ export class JokesPresenter implements JokesPresentationLogic {
     likeCount.backgroundColor = JokesStyle.instance.jokeCellModel().unselectedLikeCountBackgroundColor;
     likeCount.title = new AttributedText(joke.likeCount.toString(), JokesStyle.instance.jokeCellModel().unselectedLikeCountStyle);
     likeCount.borderRadius = ApplicationConstraints.constant.x12;
-    likeCount.isDisabled = false;
+    likeCount.isDisabled = true;
     likeCount.isLoading = false;
     return likeCount;
   }
@@ -192,7 +192,7 @@ export class JokesPresenter implements JokesPresentationLogic {
     dislikeCount.backgroundColor = JokesStyle.instance.jokeCellModel().unselectedDislikeCountBackgroundColor;
     dislikeCount.title = new AttributedText(joke.dislikeCount.toString(), JokesStyle.instance.jokeCellModel().unselectedDislikeCountStyle);
     dislikeCount.borderRadius = ApplicationConstraints.constant.x12;
-    dislikeCount.isDisabled = false;
+    dislikeCount.isDisabled = true;
     dislikeCount.isLoading = false;
     return dislikeCount;
   }

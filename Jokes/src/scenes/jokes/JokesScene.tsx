@@ -1,5 +1,5 @@
 import React from 'react';
-import {ActivityIndicator, FlatList, ImageBackground, RefreshControl, SafeAreaView, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {ActivityIndicator, FlatList, ImageBackground, RefreshControl, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {SpaceCell} from '../../components/cells/space/SpaceCell';
 import {AttributedText} from '../../models/attributed_text/AttributedText';
 import {JokeTextCell} from '../../components/cells/joke/JokeTextCell';
@@ -75,6 +75,7 @@ export class JokesScene extends React.Component<JokesScene.Props, JokesScene.Sta
     return (
       <ImageBackground style={[this.constraints.imageBackgroundView]} source={ApplicationStyle.images.wallBackgroundImage}>
         <SafeAreaView style={[this.constraints.safeAreaView, this.styles.safeAreaView]}>
+          <StatusBar animated={true} backgroundColor={ApplicationStyle.colors.primary} barStyle={'light-content'} showHideTransition={'fade'} hidden={false} />
           {this.setupModalContainerView()}
           {this.setupNavigationBar()}
           {this.setupFlatList()}
@@ -136,7 +137,6 @@ export class JokesScene extends React.Component<JokesScene.Props, JokesScene.Sta
         onEndReached={() => this.interactor?.shouldFetchJokes()}
         onEndReachedThreshold={0.2}
         ListFooterComponent={this.setupFlatListFooter()}
-        contentContainerStyle={{paddingBottom: ApplicationConstraints.constant.x120}}
         refreshControl={this.setupRefreshControl()}
       />
     );
