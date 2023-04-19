@@ -32,8 +32,6 @@ export interface JokesPresentationLogic {
 
   presentReadState(response: JokesModels.ItemReadState.Response): void;
 
-  presentErrorActionAlert(response: JokesModels.ActionAlertPresentation.Response): void;
-
   presentScrollToItem(response: JokesModels.ItemScroll.Response): void;
 }
 
@@ -72,11 +70,6 @@ export class JokesPresenter implements JokesPresentationLogic {
 
   presentReadState(response: JokesModels.ItemReadState.Response): void {
     this.displayer?.displayReadState(new JokesModels.ItemReadState.ViewModel(response.isRead, response.id));
-  }
-
-  presentErrorActionAlert(response: JokesModels.ActionAlertPresentation.Response): void {
-    let message = response.error.localizedMessage();
-    this.displayer?.displayErrorActionAlert(new JokesModels.ActionAlertPresentation.ViewModel(undefined, message));
   }
 
   presentScrollToItem(response: JokesModels.ItemScroll.Response): void {

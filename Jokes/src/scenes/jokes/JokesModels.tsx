@@ -92,26 +92,6 @@ export namespace JokesModels {
     }
   }
 
-  export namespace ActionAlertPresentation {
-    export class Response {
-      error: OperationError;
-
-      constructor(error: OperationError) {
-        this.error = error;
-      }
-    }
-
-    export class ViewModel {
-      title?: string;
-      message?: string;
-
-      constructor(title?: string, message?: string) {
-        this.title = title;
-        this.message = message;
-      }
-    }
-  }
-
   export namespace ItemSelection {
     export class Request {
       id?: string;

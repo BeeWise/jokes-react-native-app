@@ -18,7 +18,6 @@ export class JokesInteractor implements JokesBusinessLogic, JokesWorkerDelegate 
   presenter?: JokesPresentationLogic;
   worker?: JokesWorker;
 
-  dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'";
   paginationModel: JokesModels.PaginationModel = new JokesModels.PaginationModel();
 
   constructor() {

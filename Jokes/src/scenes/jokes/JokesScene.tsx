@@ -11,7 +11,6 @@ import {JokesStyle} from './JokesStyle';
 import {v4 as uuidv4} from 'uuid';
 import {ApplicationConstraints} from '../../style/ApplicationConstraints';
 import {JokesModalContainerView} from './views/JokesModalContainerView';
-import {ActionAlertScene} from '../action_alert/ActionAlertScene';
 import {LogoNavigationView} from '../../components/views/logo_navigation_view/LogoNavigationView';
 import {ApplicationStyle} from '../../style/ApplicationStyle';
 import {UserAvatarView} from '../../components/views/user_avatar_view/UserAvatarView';
@@ -32,7 +31,6 @@ export interface JokesDisplayLogic {
   displayRemoveError(): void;
 
   displayReadState(viewModel: JokesModels.ItemReadState.ViewModel): void;
-  displayErrorActionAlert(viewModel: JokesModels.ActionAlertPresentation.ViewModel): void;
 
   displayScrollToItem(viewModel: JokesModels.ItemScroll.ViewModel): void;
 }
@@ -189,10 +187,6 @@ export class JokesScene extends React.Component<JokesScene.Props, JokesScene.Sta
   setupModalContainerView() {
     return <JokesModalContainerView key={uuidv4()} ref={ref => (this.modalContainerView = ref)} model={new JokesModalContainerView.Model()} delegate={this} />;
   }
-
-  jokesModalContainerViewActionAlertOnPressCancelAction(_view: JokesModalContainerView, _scene: ActionAlertScene): void {
-    this.router?.dismissActionAlertScene();
-  }
   //#endregion
 
   //#region Styles
@@ -328,29 +322,12 @@ export class JokesScene extends React.Component<JokesScene.Props, JokesScene.Sta
     }
   }
 
-  displayErrorActionAlert(viewModel: JokesModels.ActionAlertPresentation.ViewModel): void {
-    this.router?.showActionAlertScene(viewModel.title, viewModel.message);
-  }
-
   displayScrollToItem(viewModel: JokesModels.ItemScroll.ViewModel) {
     this.flatList?.scrollToIndex({animated: viewModel.animated, index: viewModel.index});
   }
   //#endregion
 
   //#region Auxiliary
-  displayedJokeTextModel(type: JokesModels.ItemType, id?: string): JokeTextCell.Model | undefined {
-    for (let index = 0; index < this.props.model.displayedItems.length; index++) {
-      let item = this.props.model.displayedItems[index];
-      if (item.type === type && item.model instanceof JokeTextCell.Model) {
-        let model = item.model as JokeTextCell.Model | undefined;
-        if (model !== undefined && model.id === id) {
-          return model;
-        }
-      }
-    }
-    return undefined;
-  }
-
   displayedJokeQnaModel(type: JokesModels.ItemType, id?: string): JokeQuestionAnswerCell.Model | undefined {
     for (let index = 0; index < this.props.model.displayedItems.length; index++) {
       let item = this.props.model.displayedItems[index];
@@ -364,22 +341,6 @@ export class JokesScene extends React.Component<JokesScene.Props, JokesScene.Sta
     return undefined;
   }
   //#endregion
-
-  displayLogoNavigationLoadingState(isLoading: boolean) {
-    if (this.navigationView !== undefined && this.navigationView !== null && this.props.model.logoNavigation !== undefined && this.props.model.logoNavigation !== null) {
-      this.props.model.logoNavigation.userAvatar.loadingImage.isLoading = isLoading;
-      this.navigationView.props.model.userAvatar.loadingImage.isLoading = isLoading;
-      this.navigationView.reload();
-    }
-  }
-
-  displayLogoNavigationAvatar(model: UserAvatarView.Model) {
-    if (this.navigationView !== undefined && this.navigationView !== null && this.props.model.logoNavigation !== undefined && this.props.model.logoNavigation !== null) {
-      this.props.model.logoNavigation.userAvatar = model;
-      this.navigationView.props.model.userAvatar = model;
-      this.navigationView.reload();
-    }
-  }
 }
 
 export namespace JokesScene {

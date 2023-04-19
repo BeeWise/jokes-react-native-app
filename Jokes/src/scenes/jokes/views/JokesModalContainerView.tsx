@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
-import {Modal, StyleSheet, View, ViewProps} from 'react-native';
-import {v4 as uuidv4} from 'uuid';
-import {ActionAlertScene} from '../../action_alert/ActionAlertScene';
+import {StyleSheet, View, ViewProps} from 'react-native';
 
-export class JokesModalContainerView extends Component<JokesModalContainerView.Props, JokesModalContainerView.State> implements ActionAlertScene.Delegate {
-  actionAlertSceneModel: ActionAlertScene.Model = new ActionAlertScene.Model();
-
+export class JokesModalContainerView extends Component<JokesModalContainerView.Props, JokesModalContainerView.State> {
   constructor(props: JokesModalContainerView.Props) {
     super(props);
   }
@@ -19,41 +15,8 @@ export class JokesModalContainerView extends Component<JokesModalContainerView.P
   }
 
   setupContainerView() {
-    return <View style={constraints.containerView}>{this.setupActionAlertScene()}</View>;
+    return <View style={constraints.containerView} />;
   }
-
-  //#region Action alert scene
-  showActionAlertScene(title?: string, message?: string) {
-    this.actionAlertSceneModel.isVisible = true;
-    this.actionAlertSceneModel.title = title;
-    this.actionAlertSceneModel.message = message;
-    this.reload();
-  }
-
-  dismissActionAlertScene() {
-    this.actionAlertSceneModel.isVisible = false;
-    this.reload();
-  }
-
-  setupActionAlertScene() {
-    return (
-      <Modal
-        style={constraints.modalView}
-        animationType="fade"
-        transparent={true}
-        visible={this.actionAlertSceneModel.isVisible}
-        onRequestClose={() => {
-          this.dismissActionAlertScene();
-        }}>
-        <ActionAlertScene key={uuidv4()} model={this.actionAlertSceneModel} delegate={this} />
-      </Modal>
-    );
-  }
-
-  actionAlertSceneOnPressCancelAction(scene: ActionAlertScene): void {
-    this.props.delegate?.jokesModalContainerViewActionAlertOnPressCancelAction(this, scene);
-  }
-  //#endregion
 }
 
 const constraints = StyleSheet.create({
@@ -81,7 +44,5 @@ export namespace JokesModalContainerView {
 
   export interface State {}
 
-  export interface Delegate {
-    jokesModalContainerViewActionAlertOnPressCancelAction(view: JokesModalContainerView, scene: ActionAlertScene): void;
-  }
+  export interface Delegate {}
 }
