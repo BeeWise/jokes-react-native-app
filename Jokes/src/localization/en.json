@@ -1,0 +1,43 @@
+{
+  "Operation.error.unknown": "Whoops! An error occurred... We're just kidding, please try again! 😂",
+
+  "Operation.error.no.url.available": "Whoops! An error occurred... We're just kidding, please try again! 😂",
+  "Operation.error.no.data.available": "Whoops! An error occurred... We're just kidding, please try again! 😂",
+  "Operation.error.cannot.parse.response": "Whoops! An error occurred... We're just kidding, please try again! 😂",
+  "Operation.error.operation.cancelled": "Whoops! An error occurred... We're just kidding, please try again! 😂",
+  "Operation.error.no.internet.connection": "Whoops! You don't have Internet connection. Please try later!",
+
+  "Cancel.title": "Cancel",
+  "Save.title": "Save",
+  "Done.title": "Done",
+  "OK.title": "OK",
+
+  "Jokes.title": "Jokes",
+
+  "Username.title": "@{0}",
+
+  "iOS.title": "iOS",
+  "Android.title": "Android",
+
+  "Joke.type.text.title": "Text",
+  "Joke.type.qna.title": "Question & answer",
+
+  "Joke.status.pending.title": "Pending",
+  "Joke.status.approved.title": "Approved",
+  "Joke.status.rejected.title": "Rejected",
+  "Joke.status.admin.removed.title": "Removed by admin",
+  "Joke.status.owner.removed.title": "Removed",
+
+  "Share.joke.title": "Share joke",
+  "Share.joke.message": "Do you want to laugh? Read a good joke. 🤣",
+
+  "Read.answer.title": "Read the answer",
+
+  "Jokes.scene.joke.of.the.day.title": "🔥Joke of the day",
+  "Jokes.scene.joke.of.the.week.title": "🔥Joke of the week",
+  "Jokes.scene.joke.of.the.month.title": "🔥Joke of the month",
+  "Jokes.scene.joke.of.the.year.title": "🔥Joke of the year",
+  "Jokes.scene.no.more.items.text": "No more jokes",
+  "Jokes.scene.error.text": "An error occurred while fetching jokes. Refetch jokes ↺",
+  "Jokes.scene.source.text": "Source: {0}"
+}

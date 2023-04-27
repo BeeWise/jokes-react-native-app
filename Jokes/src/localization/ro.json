@@ -1,0 +1,43 @@
+{
+  "Operation.error.unknown": "Ups! A apărut o eroare... Doar glumim, te rog să încerci din nou! 😂",
+
+  "Operation.error.no.url.available": "Ups! A apărut o eroare... Doar glumim, te rog să încerci din nou! 😂",
+  "Operation.error.no.data.available": "Ups! A apărut o eroare... Doar glumim, te rog să încerci din nou! 😂",
+  "Operation.error.cannot.parse.response": "Ups! A apărut o eroare... Doar glumim, te rog să încerci din nou! 😂",
+  "Operation.error.operation.cancelled": "Ups! A apărut o eroare... Doar glumim, te rog să încerci din nou! 😂",
+  "Operation.error.no.internet.connection": "Ups! Nu ai conexiune la Internet. Te rog să încerci mai târziu!",
+
+  "Cancel.title": "Anulează",
+  "Save.title": "Salvează",
+  "Done.title": "Done",
+  "OK.title": "OK",
+
+  "Jokes.title": "Glume",
+
+  "Username.title": "@{0}",
+
+  "iOS.title": "iOS",
+  "Android.title": "Android",
+
+  "Joke.type.text.title": "Text",
+  "Joke.type.qna.title": "Întrebare și răspuns",
+
+  "Joke.status.pending.title": "În așteptare",
+  "Joke.status.approved.title": "Aprobat",
+  "Joke.status.rejected.title": "Refuzat",
+  "Joke.status.admin.removed.title": "Eliminat de admin",
+  "Joke.status.owner.removed.title": "Eliminat",
+
+  "Share.joke.title": "Distribuie gluma",
+  "Share.joke.message": "Vrei să râzi? Citește o glumă bună. 🤣",
+
+  "Read.answer.title": "Citește răspunsul",
+
+  "Jokes.scene.joke.of.the.day.title": "🔥Gluma zilei",
+  "Jokes.scene.joke.of.the.week.title": "🔥Gluma săptămânii",
+  "Jokes.scene.joke.of.the.month.title": "🔥Gluma lunii",
+  "Jokes.scene.joke.of.the.year.title": "🔥Gluma anului",
+  "Jokes.scene.no.more.items.text": "Nu mai sunt glume",
+  "Jokes.scene.error.text": "A apărut o eroare. Reîncarcă glumele ↺",
+  "Jokes.scene.source.text": "Sursă: {0}"
+}
