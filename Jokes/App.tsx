@@ -1,8 +1,8 @@
 import React from 'react';
-import {JokesScene} from './src/scenes/jokes/JokesScene';
+import {ApplicationScene} from './src/scenes/application/ApplicationScene';
 
 const App = () => {
-  return <JokesScene model={new JokesScene.Model()} />;
+  return <ApplicationScene />;
 };
 
 export default App;

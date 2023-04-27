@@ -1,4 +1,5 @@
 import {instanceToPlain} from 'class-transformer';
+import {URL} from 'react-native-url-polyfill';
 
 interface RequestBuilderInterface {
   url(): string;
