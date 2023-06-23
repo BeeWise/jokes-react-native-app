@@ -1,0 +1,26 @@
+name: "Run tests"
+on: 
+  pull_request:
+    branches: ['master', 'develop']
+
+jobs:
+  tests:
+    name: "Unit tests"
+    runs-on: macOS-latest
+
+    timeout-minutes: 60
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+        cache: 'npm'
+
+    - name: "Install node dependencies"
+      run: "npm ci"
+      working-directory: Jokes
+
+    - name: "Run tests"
+      run: "npm test"
+      working-directory: Jokes
