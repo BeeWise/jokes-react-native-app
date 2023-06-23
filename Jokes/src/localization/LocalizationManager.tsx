@@ -1,7 +1,7 @@
 import LocalizedStrings from 'react-native-localization';
 import en from './en.json';
 import ro from './ro.json';
-import * as RNLocalize from 'react-native-localize';
+import RNLocalize from 'react-native-localize';
 
 export const localizedStrings = new LocalizedStrings({
   en: en,

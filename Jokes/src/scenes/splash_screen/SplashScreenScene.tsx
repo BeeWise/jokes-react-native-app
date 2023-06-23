@@ -1,6 +1,5 @@
 import React from 'react';
 import {ImageBackground, StatusBar, StyleSheet} from 'react-native';
-import {ApplicationConstraints} from '../../style/ApplicationConstraints';
 import {ApplicationStyle} from '../../style/ApplicationStyle';
 import {SplashScreenStyle} from './SplashScreenStyle';
 
@@ -23,21 +22,12 @@ export class SplashScreenScene extends React.Component<SplashScreenScene.Props, 
   }
   //#endregion
 
-  //#region Styles
-  styles = StyleSheet.create({
-    logoImageView: {},
-  });
-  //#endregion
-
   //#region Constraints
   constraints = StyleSheet.create({
     imageView: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-    },
-    logoImageView: {
-      width: ApplicationConstraints.multiplier.x75,
     },
   });
   //#endregion
