@@ -177,8 +177,4 @@ describe('JokesInteractorTests', () => {
     sut.shouldSelectLogo();
     expect(presenterSpy.presentScrollToItemCalled).toBeTruthy();
   });
-
-  it('testFailedTest', () => {
-    expect(true).toBeFalsy();
-  });
 });
